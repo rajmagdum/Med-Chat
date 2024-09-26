@@ -1,0 +1,10 @@
+langchain==0.0.332
+flask
+flask[async]
+pypdf2
+python-dotenv
+faiss-cpu
+openai==0.28.0
+tiktoken
+numpy
+-e .
