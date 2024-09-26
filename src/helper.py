@@ -11,15 +11,15 @@ load_dotenv()
 def get_openai_embeddings():
     try:
         # Load proxy settings from environment (optional)
-        http_proxy = os.getenv("HTTP_PROXY")
-        https_proxy = os.getenv("HTTPS_PROXY")
+        # http_proxy = os.getenv("HTTP_PROXY")
+        # https_proxy = os.getenv("HTTPS_PROXY")
 
-        # Create an OpenAIEmbeddings object, passing proxy settings if they exist
+        # Create an OpenAIEmbeddings object, without proxy settings
         embedding_model = OpenAIEmbeddings(
             model="text-embedding-ada-002",  # Specify the model for embeddings
             openai_api_key=os.getenv("OPENAI_API_KEY"),  # Load OpenAI API key from environment
             openai_api_base=os.getenv("OPENAI_API_BASE"),  # Load API base URL from environment
-            openai_proxy=http_proxy if http_proxy else https_proxy  # Load proxy if available
+            # openai_proxy=http_proxy if http_proxy else https_proxy  # Load proxy if available (commented out)
         )
         return embedding_model
 
